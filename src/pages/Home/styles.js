@@ -85,4 +85,32 @@ export const Intro = styled.section`
       }
     }
   }
+
+  .content {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 64px;
+    }
+
+    h2 {
+      margin: 15px 0;
+      font-size: 25px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+  }
 `;

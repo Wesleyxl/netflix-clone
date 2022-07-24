@@ -1,6 +1,7 @@
 import React from "react";
 
 import Logo from "../../assets/logo.png";
+import InputLarge from "../../components/InputLarge";
 import { Container, Intro } from "./styles";
 
 function Home() {
@@ -27,6 +28,15 @@ function Home() {
             </li>
           </ul>
         </header>
+        <div className="content">
+          <h1>Filmes, séries e muito mais. Sem limites.</h1>
+          <h2>Assista onde quiser. Cancele quando quiser.</h2>
+          <p>
+            Pronto para assistir? Informe seu email para criar ou reiniciar sua
+            assinatura.
+          </p>
+          <InputLarge type="email" id="email" name="email" label="email" />
+        </div>
       </Intro>
     </Container>
   );
