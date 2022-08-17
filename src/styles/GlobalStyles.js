@@ -13,4 +13,16 @@ export default createGlobalStyle`
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
   }
+
+  li {
+    list-style-type: none;
+  }
+
+  a,button {
+    text-decoration: none;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
 `;
