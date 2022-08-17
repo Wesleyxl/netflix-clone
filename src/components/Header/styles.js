@@ -22,6 +22,10 @@ export const Container = styled.div`
       color: #ffffff;
       font-size: 20px;
       margin: 0 5px;
+
+      :hover {
+        font-weight: bold;
+      }
     }
   }
 `;

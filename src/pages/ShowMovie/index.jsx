@@ -1,11 +1,13 @@
 import React from "react";
 
 import Banner from "../../assets/bg.png";
+import Header from "../../components/Header/index";
 import { Container } from "./styles";
 
 function ShowMovie() {
   return (
     <Container image={Banner}>
+      <Header />
       <div className="text-area">
         <div className="category-area">
           <p>Drama</p>

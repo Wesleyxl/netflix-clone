@@ -6,6 +6,7 @@ import Image2 from "../../assets/home/image3.png";
 import Image3 from "../../assets/home/image4.png";
 import Symbol from "../../assets/home/symbol.png";
 import BannerImage from "../../assets/home/title-image.png";
+import Header from "../../components/Header/index";
 import MovieList from "../../components/MovieList";
 import { Container, Banner, Content } from "./styles";
 
@@ -19,6 +20,7 @@ function Home() {
 
   return (
     <Container>
+      <Header />
       <Banner image={data.image}>
         <div className="movie-title">
           <p>

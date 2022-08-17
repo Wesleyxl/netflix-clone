@@ -13,31 +13,28 @@ function Header() {
             <img src={Logo} alt="Netflix Clone" title="Netflix Clone" />
           </li>
           <li>
-            <NavLink to="/">Start</NavLink>
+            <NavLink to="/">Início</NavLink>
           </li>
           <li>
-            <NavLink to="/">Shows</NavLink>
+            <NavLink to="/series">Séries</NavLink>
           </li>
           <li>
-            <NavLink to="/">Movies</NavLink>
+            <NavLink to="/filmes">Filmes</NavLink>
           </li>
           <li>
-            <NavLink to="/">New</NavLink>
-          </li>
-          <li>
-            <NavLink to="/">My List</NavLink>
+            <NavLink to="/populares">Populares</NavLink>
           </li>
         </ul>
       </nav>
       <nav>
         <ul>
           <li>
-            <NavLink to="/">
+            <NavLink to="/favoritos">
               <i className="fa-regular fa-heart" />
             </NavLink>
           </li>
           <li>
-            <NavLink to="/">
+            <NavLink to="/notificacoes">
               <i className="fa-regular fa-bell" />
             </NavLink>
           </li>
