@@ -23,6 +23,11 @@ export const Container = styled.div`
       font-size: 20px;
       margin: 0 5px;
 
+      img {
+        width: 30px;
+        border-radius: 15px;
+      }
+
       :hover {
         font-weight: bold;
       }

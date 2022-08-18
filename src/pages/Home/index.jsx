@@ -1,11 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-import Image from "../../assets/home/Image.png";
-import Image1 from "../../assets/home/image2.png";
-import Image2 from "../../assets/home/image3.png";
-import Image3 from "../../assets/home/image4.png";
+import { movieRoutes } from "../../api/movieRoutes";
 import Symbol from "../../assets/home/symbol.png";
-import BannerImage from "../../assets/home/title-image.png";
 import Header from "../../components/Header/index";
 import MovieList from "../../components/MovieList";
 import { Container, Banner, Content } from "./styles";
@@ -13,20 +9,42 @@ import { Container, Banner, Content } from "./styles";
 // teste
 
 function Home() {
-  const data = {
-    name: "MAD",
-    image: BannerImage,
-  };
+  const [movies, setMovies] = useState([]);
+  const [banner, setBanner] = useState("");
+
+  useEffect(() => {
+    const getMovies = async () => {
+      const response = await movieRoutes.index();
+
+      if (response.error) {
+        alert(response.error);
+      } else {
+        setMovies(response);
+      }
+    };
+    const getBanner = async () => {
+      const response = await movieRoutes.getBanner();
+
+      if (response.error) {
+        alert(response.error);
+      } else {
+        setBanner(response);
+      }
+    };
+
+    getBanner();
+    getMovies();
+  }, []);
 
   return (
     <Container>
       <Header />
-      <Banner image={data.image}>
+      <Banner banner={banner.banner}>
         <div className="movie-title">
           <p>
             <img src={Symbol} alt="" /> Shows
           </p>
-          <h1>{data.name}</h1>
+          <h1>{banner.name}</h1>
           <div className="buttons">
             <a href="/" className="btn-play">
               <i className="fa-solid fa-chevron-right" />
@@ -48,14 +66,20 @@ function Home() {
             </p>
           </div>
           <div className="list">
-            <MovieList image={Image} />
-            <MovieList image={Image1} />
+            {movies
+              ? movies.map((movie) => (
+                  <div key={movie.id}>
+                    <MovieList data={movie} />
+                  </div>
+                ))
+              : ""}
+            {/* <MovieList image={Image1} />
             <MovieList image={Image2} />
-            <MovieList image={Image3} />
+            <MovieList image={Image3} /> */}
           </div>
         </div>
 
-        <div className="list-movies">
+        {/* <div className="list-movies">
           <div className="title">
             <p>
               Top 10 in your country <i className="fa-solid fa-chevron-right" />
@@ -66,8 +90,9 @@ function Home() {
             <MovieList image={Image1} />
             <MovieList image={Image2} />
             <MovieList image={Image3} />
+
           </div>
-        </div>
+        </div> */}
       </Content>
     </Container>
   );

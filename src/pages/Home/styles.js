@@ -5,7 +5,7 @@ export const Container = styled.section``;
 export const Banner = styled.div`
   width: 100%;
   height: 800px;
-  background-image: url(${(props) => props.image});
+  background-image: url(${(props) => `${`http://${props.banner}`}`});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -33,14 +33,15 @@ export const Banner = styled.div`
     }
 
     h1 {
-      font-size: 120px;
+      font-size: 50px;
+      max-width: 400px;
     }
 
     .buttons {
       padding: 0 15px;
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
 
       .btn-play {
         display: flex;
@@ -53,6 +54,7 @@ export const Banner = styled.div`
         background: #ffffff;
         color: #000000;
         font-weight: bold;
+        margin-right: 30px;
 
         i {
           margin-right: 4px;
@@ -94,6 +96,7 @@ export const Content = styled.div`
   width: 100%;
   padding: 15px;
   padding-bottom: 180px;
+  overflow-x: hidden;
 
   .list-movies {
     margin: 30px 0 100px;

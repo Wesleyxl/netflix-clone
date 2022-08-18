@@ -2,16 +2,16 @@ import React from "react";
 
 import { Container } from "./styles";
 
-function MovieList({ image }) {
+function MovieList({ data }) {
   const hanlderMovieShow = () => {
-    window.location = "/details";
+    window.location = `/detalhe/${data.id}`;
   };
 
   return (
     <Container>
       <div className="box">
         <div className="img">
-          <img src={image} alt="name" title="name" />
+          <img src={`http://${data.image}`} alt="name" title="name" />
         </div>
 
         <div className="description">
@@ -39,13 +39,13 @@ function MovieList({ image }) {
 
           <div className="info">
             <p className="match">90% Match</p>
-            <div className="parental">18</div>
+            <div className="parental">{data.parental}</div>
           </div>
 
           <div className="category-info">
-            <p>Mystery</p>
-            <p>Thriller</p>
-            <p>Science Fiction </p>
+            <p>{data.category.name}</p>
+            {/* <p>Thriller</p>
+            <p>Science Fiction </p> */}
           </div>
         </div>
       </div>

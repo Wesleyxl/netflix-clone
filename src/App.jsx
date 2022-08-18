@@ -16,7 +16,7 @@ function App() {
         {/* main routes */}
         <Route path="/" element={<PrivateRoute />}>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/details" element={<ShowMovie />} />
+          <Route exact path="/detalhe/:id" element={<ShowMovie />} />
         </Route>
 
         {/* auth routes  */}

@@ -1,8 +1,8 @@
-import { api } from "./config";
+import { apiPublic } from "./config";
 
 export const authRoutes = {
   login: async (email, password) => {
-    const response = api
+    const response = apiPublic
       .post("/auth/login", {
         email,
         password,
